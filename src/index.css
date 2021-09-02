@@ -31,7 +31,7 @@
 
 .feeds-container {
   display: inline-grid;
-  grid-template-columns: 100% 100% 100% 100%;
+  grid-template-columns: auto auto auto auto;
   padding: 20px;
 }
 
