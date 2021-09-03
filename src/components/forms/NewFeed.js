@@ -13,18 +13,18 @@ export default class NewFeed extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault()
-    // pass in addFeed function here
+    this.props.addFeed(this.state.handle)
     this.setState({ handle: '' })
   }
 
   render() {
     return (
       <div>
-        <form onSubmit={event => this.handleSubmit(event)}>
+        <form onSubmit={event => this.handleOnSubmit(event)}>
           <input
             type='text'
             name='handle'
-            onChange={event => this.handleChange(event)}
+            onChange={event => this.handleOnChange(event)}
             value={this.state.handle}
           />
           <input type='submit' />

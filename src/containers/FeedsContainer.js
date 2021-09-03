@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Feed from '../components/feeds/Feed'
 import NewFeed from '../components/forms/NewFeed'
+import { addFeed, getFeeds } from '../actions/feeds/feedActions'
 
 class FeedsContainer extends Component {
 
@@ -12,17 +13,22 @@ class FeedsContainer extends Component {
       const feeds = this.props.feeds.map(feed => <Feed feed={feed} key={feed.handle} />)
       const forms = []
       for(let i=0; i<(4-this.props.feeds.length); i++){
-        forms.push(<NewFeed key={i}/>)
+        forms.push(<NewFeed key={i} addFeed={this.props.addFeed} />)
       }
       return feeds.concat(forms)
     } else {
       const forms = []
       for(let i=0; i<4; i++){
-        forms.push(<NewFeed key={i} />)
+        forms.push(<NewFeed key={i} addFeed={this.props.addFeed} />)
       }
       return forms
     }
   }
+
+  componentDidMount(){
+    this.props.getFeeds()
+  }
+
   render() {
 
     return (
@@ -37,4 +43,4 @@ const mapStateToProps = state => {
   return { feeds: state.feeds }
 }
 
-export default connect(mapStateToProps)(FeedsContainer)
+export default connect(mapStateToProps, { addFeed, getFeeds })(FeedsContainer)

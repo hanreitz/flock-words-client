@@ -1,14 +1,5 @@
 const initialState = {
-  feeds: [
-    {
-      handle: '@example1',
-      tweets: ['Oh man!']
-    },
-    {
-      handle: '@example2',
-      tweets: ['My first tweet!', 'Another tweet']
-    }
-  ], 
+  feeds: [],
   requesting: false
 }
 
@@ -24,6 +15,18 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         feeds: state.feeds.concat(action.feed),
+        requesting: false
+      }
+    case 'LOADING_FEEDS':
+      return {
+        ...state,
+        feeds: [...state.feeds],
+        requesting: true
+      }
+    case 'ADD_FEEDS':
+      return {
+        ...state,
+        feeds: action.feeds,
         requesting: false
       }
     default:
