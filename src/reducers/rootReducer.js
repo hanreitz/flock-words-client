@@ -8,13 +8,26 @@ const initialState = {
       handle: '@example2',
       tweets: ['My first tweet!', 'Another tweet']
     }
-  ]
+  ], 
+  requesting: false
 }
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
-  default:
-    return state
+    case 'START_ADDING_FEED_REQUEST':
+      return {
+        ...state, 
+        feeds: [...state.feeds],
+        requesting: true
+      }
+    case 'ADD_FEED':
+      return {
+        ...state,
+        feeds: action.feeds,
+        requesting: false
+      }
+    default:
+      return state
   }
 }
 
