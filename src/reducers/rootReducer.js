@@ -14,7 +14,7 @@ const initialState = {
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'START_ADDING_FEED_REQUEST':
+    case 'LOADING_FEED':
       return {
         ...state, 
         feeds: [...state.feeds],
@@ -23,7 +23,7 @@ const rootReducer = (state = initialState, action) => {
     case 'ADD_FEED':
       return {
         ...state,
-        feeds: action.feeds,
+        feeds: state.feeds.concat(action.feed),
         requesting: false
       }
     default:
