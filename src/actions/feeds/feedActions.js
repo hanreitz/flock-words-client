@@ -33,10 +33,10 @@ export const getFeeds = () => {
   }
 }
 
-export const getTweets = feed => {
+export const getTweets = () => {
   return (dispatch) => {
     dispatch({type: 'LOADING_TWEETS'})
-    fetch(`http://localhost:3000/feeds/${feed.id}/tweets`)
+    fetch(`http://localhost:3000/tweets`)
     .then(resp => resp.json())
     .then(tweets => dispatch({
       type: 'ADD_TWEETS',

@@ -1,3 +1,4 @@
+import { combineReducers } from 'redux'
 import feedsReducer from "./feedsReducer"
 import tweetsReducer from "./tweetsReducer"
 
