@@ -1,5 +1,5 @@
 import React from 'react'
-import { TagCloud } from 'react-tagcloud'
+import ReactWordcloud from 'react-wordcloud'
 
 const Wordcloud = props => {
   const sentenceList = props.tweets.map(tweet => tweet.content)
@@ -8,22 +8,22 @@ const Wordcloud = props => {
   let wordObject = []
   for(let i=0; i<wordList.length; i++){
     const wordInList = wordList[i]
-    const existingWord = wordObject.find(word => word.value === wordInList)
-    const index = wordObject.findIndex(word => word.value === wordInList)
+    const existingWord = wordObject.find(word => word.text === wordInList)
+    const index = wordObject.findIndex(word => word.text === wordInList)
     if(existingWord){
-      wordObject = wordObject.slice(0,index).concat({ value: wordObject[index].value, count: (wordObject[index].count + 1)}).concat(wordObject.slice(index+1))
+      wordObject = wordObject.slice(0,index).concat({ text: wordObject[index].text, value: (wordObject[index].value + 1)}).concat(wordObject.slice(index+1))
     } else {
-      wordObject = wordObject.concat({ value: wordList[i], count: 1 })
+      wordObject = wordObject.concat({ text: wordList[i], value: 1 })
     }
   }
 
-  const cloud = (
-      <TagCloud minSize={12} maxSize={35} tags={wordObject.flat()} />
-    )
+  const options = {
+    fontSizes: [32,64]
+  }
 
   return(
     <div className='wordcloud'>
-      {cloud}
+      <ReactWordcloud words={wordObject} options={options} />
     </div>
   )
 }
