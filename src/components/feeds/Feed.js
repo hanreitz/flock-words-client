@@ -1,13 +1,11 @@
 import React from 'react'
+import TweetsContainer from '../../containers/TweetsContainer'
 
 const Feed = props => {
-
   return (
     <div className='feed-card'>
       <h3>{props.feed.handle}</h3>
-      <ul>
-
-      </ul>
+      <TweetsContainer feed={props.feed} />
     </div>
   )
 }

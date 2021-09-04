@@ -8,11 +8,10 @@ class FeedsContainer extends Component {
 
   whatToRender = () => {
     const feeds = this.props.feeds.feeds
-    const tweets = this.props.tweets.tweets
     if(feeds.length === 4){
-      return feeds.map(feed => <Feed feed={feed} tweets={tweets.filter(tweet => tweet.feed_id === feed.id)} key={feed.handle} />)
-    } else if (this.props.feeds.feeds.length > 0){
-      const feedList = feeds.map(feed => <Feed feed={feed} tweets={tweets.filter(tweet => tweet.feed_id = feed.id)} key={feed.handle} />)
+      return feeds.map(feed => <Feed feed={feed} key={feed.handle} />)
+    } else if (feeds.length > 0){
+      const feedList = feeds.map(feed => <Feed feed={feed} key={feed.handle} />)
       const forms = []
       for(let i=0; i<(4-feeds.length); i++){
         forms.push(<NewFeed key={i} addFeed={this.props.addFeed} />)
@@ -31,6 +30,10 @@ class FeedsContainer extends Component {
     this.props.getFeeds()
     this.props.getTweets()
   }
+
+  // componentDidUpdate(){
+  //   this.props.getTweets()
+  // }
 
   render() {
 
