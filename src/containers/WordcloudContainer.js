@@ -1,12 +1,24 @@
 import React, { Component } from 'react'
 import Wordcloud from '../components/wordcloud/Wordcloud'
+import { connect } from 'react-redux'
 
-export default class WordcloudContainer extends Component {
+class WordcloudContainer extends Component {
+  
   render() {
+    const tweets = this.props.tweets.tweets
+  
     return (
       <div className='wordcloud-container'>
-        <Wordcloud />
+        <Wordcloud tweets={tweets} />
       </div>
     )
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    tweets: state.tweets
+  }
+}
+
+export default connect(mapStateToProps)(WordcloudContainer)
