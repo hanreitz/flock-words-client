@@ -36,7 +36,6 @@ class FeedsContainer extends Component {
   }
 
   render() {
-
     return (
       <div className='feeds-container'>
         {this.whatToRender()}

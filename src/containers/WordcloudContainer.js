@@ -1,15 +1,20 @@
 import React, { Component } from 'react'
 import Wordcloud from '../components/wordcloud/Wordcloud'
 import { connect } from 'react-redux'
+import { getData } from '../actions/feeds/feedActions'
 
 class WordcloudContainer extends Component {
   
+  componentDidMount() {
+    this.props.getData()
+  }
+
   render() {
-    const tweets = this.props.tweets.tweets
+    const data = this.props.data
   
     return (
       <div className='wordcloud-container'>
-        <Wordcloud tweets={tweets} />
+        <Wordcloud data={data} />
       </div>
     )
   }
@@ -17,8 +22,8 @@ class WordcloudContainer extends Component {
 
 const mapStateToProps = state => {
   return {
-    tweets: state.tweets
+    data: state.data
   }
 }
 
-export default connect(mapStateToProps)(WordcloudContainer)
+export default connect(mapStateToProps, { getData })(WordcloudContainer)

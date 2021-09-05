@@ -1,10 +1,33 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
+
+const navbarItems = [
+  {
+    name: 'Home',
+    route: '/'
+  },
+  {
+   name: 'Data',
+   route: '/data'
+  },
+  {
+   name: 'Sign Up',
+   route: '/signup'
+  },
+  {
+    name: 'Login',
+    route: '/login'
+  },
+  {
+    name: 'About',
+    route: '/about'
+  }
+]
 
 const Navbar = () => {
-  const navbarItems = ['Home', 'Sign Up', 'Login', 'About']
   return (
     <div className='navbar-container'>
-      {navbarItems.map(item => <div key={item} className='navbar-item'>{item}</div>)}
+      {navbarItems.map(item => <NavLink to={item.route} className='navbar-item'>{item.name}</NavLink>)}
     </div>
   )
 }

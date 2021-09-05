@@ -45,6 +45,18 @@ export const getTweets = () => {
   }
 }
 
+export const getData = () => {
+  return (dispatch) => {
+    dispatch({ type: 'LOADING_DATA' })
+    fetch('http://localhost:3000/data')
+    .then(resp => resp.json())
+    .then(data => dispatch({
+      type: 'ADD_DATA',
+      data: data
+    }))
+  }
+}
+
 export const deleteFeed = feed => {
   return (dispatch) => {
     dispatch({ type: 'LOADING_DELETE_FEED' })
