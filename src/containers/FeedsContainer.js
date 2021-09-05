@@ -11,7 +11,7 @@ class FeedsContainer extends Component {
   }
 
   whatToRender = () => {
-    const feeds = this.props.feeds.feeds
+    const feeds = this.props.feeds
     if(feeds.length === 4){
       return feeds.map(feed => <Feed feed={feed} key={feed.handle} handleDeleteClick={this.handleDeleteClick} />)
     } else if (feeds.length > 0){

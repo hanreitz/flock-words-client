@@ -10,7 +10,7 @@ class TweetsContainer extends Component {
   }
 
   render() {
-    const tweets = this.props.tweets.tweets
+    const tweets = this.props.tweets
     const filteredTweets = tweets.filter(tweet => tweet.feed_id === this.props.feed.id)
     const tweetComponents = filteredTweets.map(tweet => <Tweet key={tweet.id} tweet={tweet} />)
     

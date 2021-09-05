@@ -10,7 +10,7 @@ const Wordcloud = props => {
 
   return(
     <div className='wordcloud'>
-      <ReactWordcloud words={props.data.data} options={options} />
+      <ReactWordcloud words={props.data} options={options} />
     </div>
   )
 }

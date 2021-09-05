@@ -1,13 +1,19 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import DataPage from '../components/DataPage'
+import { getData } from '../actions/feeds/feedActions'
 
 class DataContainer extends Component {
+  
+  componentDidMount(){
+    this.props.getData()
+  }
+
   render() {
-    const data = this.props.data.data
+    const data = this.props.data.filter(word => word.value > 5)
     return (
       <div>
-        <DataPage tweets={data} />
+        <DataPage data={data} />
       </div>
     )
   }
@@ -19,4 +25,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(DataContainer)
+export default connect(mapStateToProps, { getData })(DataContainer)
