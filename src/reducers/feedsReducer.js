@@ -29,6 +29,18 @@ const feedsReducer = (state = initialState, action) => {
         feeds: action.feeds,
         requesting: false
       }
+    case 'LOADING_DELETE_FEED':
+      return {
+        ...state,
+        feeds: [...state.feeds],
+        requesting: true
+      }
+    case 'DELETE_FEED':
+      return {
+        ...state,
+        feeds: state.feeds.filter(feed => feed !== action.feed),
+        requesting: false
+      }
     default:
       return state
   }

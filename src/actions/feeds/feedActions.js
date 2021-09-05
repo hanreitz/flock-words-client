@@ -44,3 +44,18 @@ export const getTweets = () => {
     }))
   }
 }
+
+export const deleteFeed = feed => {
+  return (dispatch) => {
+    dispatch({ type: 'LOADING_DELETE_FEED' })
+    fetch(`http://localhost:3000/feeds/${feed.id}`, { method: 'DELETE' })
+    .then(() => dispatch({
+      type: 'DELETE_TWEETS',
+      feed: feed
+    }))
+    .then(() => dispatch({
+      type: 'DELETE_FEED',
+      feed: feed
+    }))
+  }
+}

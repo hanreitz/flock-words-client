@@ -18,6 +18,12 @@ const tweetsReducer = (state = initialState, action) => {
       tweets: action.tweets,
       requesting: false
     }
+  case 'DELETE_TWEETS':
+    return {
+      ...state,
+      tweets: state.tweets.filter(tweet => tweet.feed_id !== action.feed.id),
+      requesting: false
+    }
   default:
     return state
   }
