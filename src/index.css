@@ -64,7 +64,7 @@
   border: 2px solid black;
 }
 
-.data-table th {
+.data-table th, td {
   border: 2px solid grey;
   text-align: center;
 }

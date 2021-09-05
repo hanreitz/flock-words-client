@@ -10,14 +10,14 @@ const navbarItems = [
    name: 'Data',
    route: '/data'
   },
-  {
-   name: 'Sign Up',
-   route: '/signup'
-  },
-  {
-    name: 'Login',
-    route: '/login'
-  },
+  // {
+  //  name: 'Sign Up',
+  //  route: '/signup'
+  // },
+  // {
+  //   name: 'Login',
+  //   route: '/login'
+  // },
   {
     name: 'About',
     route: '/about'

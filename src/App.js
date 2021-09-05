@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Homepage from './components/Homepage'
 import DataContainer from './containers/DataContainer'
+import AboutPage from './components/AboutPage'
 
 function App() {
   const info = console.log(process.env)
@@ -15,6 +16,7 @@ function App() {
           <Navbar />
           <Route exact path='/' component={Homepage} /> 
           <Route exact path='/data' component={DataContainer} />
+          <Route exact path='/about' component={AboutPage} />
         </div>
       </Router>
     </div>
