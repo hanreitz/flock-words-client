@@ -4,7 +4,7 @@ export default function AboutPage() {
   return (
     <div>
       <h3 className='page-title'>About</h3>
-      <p>This application was made using the Twitter API</p>
+      <p>This application was made using the <a href='https://developer.twitter.com/en/docs/twitter-api'>Twitter API</a>.</p>
 
       <p>The GitHub repositories for this project are available <a href='https://github.com/hanreitz/flock-words-api'>here</a> (backend) and <a href='https://github.com/hanreitz/flock-words-client'>here</a> (frontend).</p>
 
