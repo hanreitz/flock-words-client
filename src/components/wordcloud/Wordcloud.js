@@ -4,7 +4,7 @@ import ReactWordcloud from 'react-wordcloud'
 const Wordcloud = props => {
 
   const options = {
-    fontSizes: [32,90]
+    fontSizes: [32,72]
     // change mouseover
   }
 

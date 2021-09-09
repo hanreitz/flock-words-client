@@ -2,7 +2,7 @@
 
 Welcome to FlockWords, a wordcloud based on Twitter feeds. Find the trending topics on your chosen accounts with FlockWords.
 
-To use the application, you will also need to clone and run the backend, located at: 
+To use the application, you will also need to clone and run the backend, located at: https://github.com/hanreitz/flock-words-api
 
 # Boilerplate React README
 

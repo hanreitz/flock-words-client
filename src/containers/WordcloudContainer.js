@@ -5,10 +5,6 @@ import { getData } from '../actions/feeds/feedActions'
 
 class WordcloudContainer extends Component {
 
-  componentDidMount() {
-    this.props.getData()
-  }
-
   render() {
     const data = this.props.data
     const tweets = this.props.tweets

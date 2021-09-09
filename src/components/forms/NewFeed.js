@@ -21,12 +21,13 @@ export default class NewFeed extends Component {
     return (
       <div>
         <form onSubmit={event => this.handleOnSubmit(event)}>
+          Add Feed &nbsp; 
           <input
             type='text'
             name='handle'
             onChange={event => this.handleOnChange(event)}
             value={this.state.handle}
-          />
+          /> &nbsp;
           <input type='submit' />
         </form>
       </div>

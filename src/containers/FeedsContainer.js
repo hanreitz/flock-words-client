@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Feed from '../components/feeds/Feed'
 import NewFeed from '../components/forms/NewFeed'
-import { addFeed, getFeeds, getTweets, deleteFeed } from '../actions/feeds/feedActions'
+import { addFeed, getFeeds, deleteFeed, getData } from '../actions/feeds/feedActions'
 
 class FeedsContainer extends Component {
 
@@ -26,13 +26,13 @@ class FeedsContainer extends Component {
       for(let i=0; i<4; i++){
         forms.push(<NewFeed key={i} addFeed={this.props.addFeed} />)
       }
+      this.props.getData()
       return forms
     }
   }
 
   componentDidMount(){
     this.props.getFeeds()
-    this.props.getTweets()
   }
 
   render() {
@@ -46,9 +46,8 @@ class FeedsContainer extends Component {
 
 const mapStateToProps = state => {
   return ({ 
-    feeds: state.feeds,
-    tweets: state.tweets 
+    feeds: state.feeds
   })
 }
 
-export default connect(mapStateToProps, { addFeed, getFeeds, getTweets, deleteFeed })(FeedsContainer)
+export default connect(mapStateToProps, { addFeed, getFeeds, deleteFeed, getData })(FeedsContainer)

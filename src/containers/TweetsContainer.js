@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getTweets } from '../actions/feeds/feedActions'
+import { getTweets, getData } from '../actions/feeds/feedActions'
 import Tweet from '../components/feeds/Tweet'
 
 class TweetsContainer extends Component {
 
   componentDidMount(){
     this.props.getTweets()
+    this.props.getData()
   }
 
   render() {
@@ -28,4 +29,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { getTweets })(TweetsContainer)
+export default connect(mapStateToProps, { getTweets, getData })(TweetsContainer)
