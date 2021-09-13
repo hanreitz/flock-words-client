@@ -14,10 +14,16 @@ export const addFeed = handle => {
     }
     fetch('http://localhost:3000/feeds', configObj)
     .then(resp => resp.json())
-    .then(feed => dispatch({
-      type: 'ADD_FEED',
-      feed: feed
-    }))
+    .then(feed => {
+      if(feed.message) {
+        alert(feed.message)
+      } else {
+        dispatch({
+          type: 'ADD_FEED',
+          feed: feed
+        })
+      }
+    })
   }
 }
 
