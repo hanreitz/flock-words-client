@@ -26,13 +26,16 @@ class FeedsContainer extends Component {
       for(let i=0; i<4; i++){
         forms.push(<NewFeed key={i} addFeed={this.props.addFeed} />)
       }
-      this.props.getData()
       return forms
     }
   }
 
   componentDidMount(){
     this.props.getFeeds()
+  }
+
+  componentDidUpdate(){
+    this.props.getData()
   }
 
   render() {

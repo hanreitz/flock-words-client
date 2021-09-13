@@ -27,7 +27,7 @@ const navbarItems = [
 const Navbar = () => {
   return (
     <div className='navbar-container'>
-      {navbarItems.map(item => <NavLink to={item.route} className='navbar-item'>{item.name}</NavLink>)}
+      {navbarItems.map(item => <NavLink to={item.route} key={item.name} className='navbar-item'>{item.name}</NavLink>)}
     </div>
   )
 }
