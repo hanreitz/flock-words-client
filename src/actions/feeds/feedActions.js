@@ -77,3 +77,15 @@ export const deleteFeed = feed => {
     }))
   }
 }
+
+export const refreshTweets = feed => {
+  return (dispatch) => {
+    dispatch({ type: 'LOADING_REFRESH_TWEETS' })
+    fetch(`http://localhost:3000/feeds/${feed.id}/refresh`)
+    .then(resp => resp.json())
+    .then(tweets => dispatch ({
+      type: 'REFRESH_TWEETS',
+      tweets: tweets
+    }))
+  }
+}

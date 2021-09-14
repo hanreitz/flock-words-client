@@ -63,6 +63,18 @@ const rootReducer = (state = initialState, action) => {
         tweets: state.tweets.filter(tweet => tweet.feed_id !== action.feed.id),
         requesting: false
       }
+    case 'LOADING_REFRESH_TWEETS':
+      return {
+        ...state,
+        tweets: [...state.tweets],
+        requesting: true
+      }
+    case 'REFRESH_TWEETS':
+      return {
+        ...state,
+        tweets: action.tweets,
+        requesting: false
+      }
     // data
     case 'LOADING_DATA':
       return {

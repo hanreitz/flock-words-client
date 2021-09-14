@@ -2,9 +2,7 @@ import React from 'react'
 
 const DeleteButton = props => {
   return (
-    <button onClick={() => props.handleOnClick(props.feed)}>
-      X
-    </button>
+    <button onClick={() => props.handleOnClick(props.feed)}>X</button>
   )
 }
 
