@@ -10,8 +10,12 @@ class WordcloudContainer extends Component {
     const tweets = this.props.tweets
   
     return (
-      <div className='wordcloud-container'>
-        <Wordcloud data={data} tweets={tweets} />
+      <div className="well">
+        <div className="panel panel-default">
+          <div className="panel-body">
+            <Wordcloud data={data} tweets={tweets} />
+          </div>
+        </div>
       </div>
     )
   }

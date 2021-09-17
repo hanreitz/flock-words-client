@@ -26,9 +26,11 @@ class TweetsContainer extends Component {
     const tweetComponents = orderedTweets.map(tweet => <Tweet key={tweet.id} tweet={tweet} />)
 
     return (
-      <div className='tweets-container'>
+      <div className="well">
         <RefreshButton handleOnClick={this.handleRefreshClick} feed={this.props.feed} />
-        {tweetComponents}
+        <div className="panel panel-default">
+          {tweetComponents}
+        </div>
       </div>
     )
   }

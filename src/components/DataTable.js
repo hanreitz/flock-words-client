@@ -2,7 +2,7 @@ import React from 'react'
 
 const DataTable = props => {
   return (
-    <div className="container">
+    <div className="panel-body">
       <table className="table table-striped table-bordered">
         <thead>
           <tr>
