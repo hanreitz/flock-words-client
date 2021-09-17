@@ -2,13 +2,17 @@ import React from 'react'
 
 const DataTable = props => {
   return (
-    <div>
-      <table className='data-table'>
-        <tr>
-          <th>Word</th>
-          <th>Count</th>
-        </tr>
-        {props.data.map(word => <tr><td>{word.text}</td><td>{word.value}</td></tr>)}
+    <div className="container">
+      <table className="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Word</th>
+            <th>Count</th>
+          </tr>
+        </thead>
+        <tbody>
+          {props.data.map(word => <tr><td>{word.text}</td><td>{word.value}</td></tr>)}
+        </tbody>
       </table>
     </div>
   )

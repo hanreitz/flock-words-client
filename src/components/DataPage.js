@@ -4,11 +4,11 @@ import DataTable from './DataTable'
 const DataPage = props => {
 
   return (
-    <div>
-      <h3 className='page-title'>
+    <div className="well">
+      <h3 className="text text-justify">
         Data
       </h3>
-      <DataTable data={props.data} />
+      <DataTable data={props.data} className="container" />
     {/* 
         header
         information about current feeds

@@ -26,9 +26,9 @@ const navbarItems = [
 
 const Navbar = () => {
   return (
-    <div className='navbar-container'>
-      {navbarItems.map(item => <NavLink to={item.route} key={item.name} className='navbar-item'>{item.name}</NavLink>)}
-    </div>
+    <ul className="nav nav-tabs">
+      {navbarItems.map(item => <li><NavLink to={item.route} key={item.name} className='navbar-item'>{item.name}</NavLink></li>)}
+    </ul>
   )
 }
 
