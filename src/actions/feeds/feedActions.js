@@ -32,10 +32,12 @@ export const getFeeds = () => {
     dispatch({type: 'LOADING_FEEDS'})
     fetch('http://localhost:3000/feeds')
     .then(resp => resp.json())
-    .then(feeds => dispatch({
+    .then(feeds => {
+      dispatch({
       type: 'ADD_FEEDS',
       feeds: feeds
-    }))
+      })
+    })
   }
 }
 
