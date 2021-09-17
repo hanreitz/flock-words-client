@@ -4,7 +4,7 @@ import DeleteButton from '../../components/buttons/DeleteButton'
 
 const Feed = props => {
   return (
-    <div className='feed-card'>
+    <div className="col-lg-3">
       <DeleteButton handleOnClick={props.handleDeleteClick} feed={props.feed} />
       <h3>{props.feed.handle}</h3>
       <TweetsContainer feed={props.feed} />

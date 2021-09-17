@@ -19,16 +19,19 @@ export default class NewFeed extends Component {
 
   render() {
     return (
-      <div>
+      <div className="col-lg-3">
         <form onSubmit={event => this.handleOnSubmit(event)}>
-          Add Feed &nbsp; 
-          <input
-            type='text'
-            name='handle'
-            onChange={event => this.handleOnChange(event)}
-            value={this.state.handle}
-          /> &nbsp;
-          <input type='submit' />
+          <div className="form-group">
+            <label forHTML="handle">Add Feed </label>
+            <input
+              type='text'
+              className="form-control"
+              name='handle'
+              onChange={event => this.handleOnChange(event)}
+              value={this.state.handle}
+            />
+          </div>
+          <button type="submit" class="btn btn-default">Add</button>
         </form>
       </div>
     )

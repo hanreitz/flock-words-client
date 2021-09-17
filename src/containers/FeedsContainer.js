@@ -40,8 +40,10 @@ class FeedsContainer extends Component {
 
   render() {
     return (
-      <div className='feeds-container'>
-        {this.whatToRender()}
+      <div className='container'>
+        <div className="row">
+          {this.whatToRender()}
+        </div>
       </div>
     )
   }
